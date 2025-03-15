@@ -28,10 +28,55 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             ""id"": ""31e9669d-8cad-44aa-a882-e0c7f28c48eb"",
             ""actions"": [
                 {
-                    ""name"": ""CameraMovement"",
+                    ""name"": ""CameraMovementWithKeyboard"",
                     ""type"": ""PassThrough"",
                     ""id"": ""382bd4fe-bf05-4776-849f-50712a9f97d6"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraLocomotionWithMouse"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""222d344f-ca31-45b0-8844-5bf71b4ea878"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LeftMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb790be4-703c-44ef-9a44-a8b1021a52e0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8fed0d1-458f-41fc-8e26-06529b841049"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraRotationWithKeyboard"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""875ebe2d-b90e-4838-8cb9-d296114453e5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseScroll"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""2608f9f4-9426-43ca-8a0c-0d8371c9a721"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -45,7 +90,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""CameraMovementWithKeyboard"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -56,7 +101,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""CameraMovementWithKeyboard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -67,7 +112,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""CameraMovementWithKeyboard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -78,7 +123,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""CameraMovementWithKeyboard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -89,9 +134,86 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
+                    ""action"": ""CameraMovementWithKeyboard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""975681c0-38b2-4aad-ae37-a6f95f745fa9"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraLocomotionWithMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4435389-4d6f-496d-b3d3-8a7d416fe7e0"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b2bb51b-71ad-4805-85ca-23b9b8115250"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""48f47925-a02d-4f36-869c-6a6f8ebd355b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotationWithKeyboard"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""379302c3-ef9b-4b4d-8fa8-dfb67fdba2ee"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotationWithKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8cc590bd-67df-4514-9c63-f6924cf6cd7f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotationWithKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58c4bee6-64b4-4250-9d7c-ba7de273779e"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseScroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -100,7 +222,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_CameraMovement = m_Player.FindAction("CameraMovement", throwIfNotFound: true);
+        m_Player_CameraMovementWithKeyboard = m_Player.FindAction("CameraMovementWithKeyboard", throwIfNotFound: true);
+        m_Player_CameraLocomotionWithMouse = m_Player.FindAction("CameraLocomotionWithMouse", throwIfNotFound: true);
+        m_Player_LeftMouse = m_Player.FindAction("LeftMouse", throwIfNotFound: true);
+        m_Player_RightMouse = m_Player.FindAction("RightMouse", throwIfNotFound: true);
+        m_Player_CameraRotationWithKeyboard = m_Player.FindAction("CameraRotationWithKeyboard", throwIfNotFound: true);
+        m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
     }
 
     ~@PlayerInput()
@@ -167,12 +294,22 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_CameraMovement;
+    private readonly InputAction m_Player_CameraMovementWithKeyboard;
+    private readonly InputAction m_Player_CameraLocomotionWithMouse;
+    private readonly InputAction m_Player_LeftMouse;
+    private readonly InputAction m_Player_RightMouse;
+    private readonly InputAction m_Player_CameraRotationWithKeyboard;
+    private readonly InputAction m_Player_MouseScroll;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @CameraMovement => m_Wrapper.m_Player_CameraMovement;
+        public InputAction @CameraMovementWithKeyboard => m_Wrapper.m_Player_CameraMovementWithKeyboard;
+        public InputAction @CameraLocomotionWithMouse => m_Wrapper.m_Player_CameraLocomotionWithMouse;
+        public InputAction @LeftMouse => m_Wrapper.m_Player_LeftMouse;
+        public InputAction @RightMouse => m_Wrapper.m_Player_RightMouse;
+        public InputAction @CameraRotationWithKeyboard => m_Wrapper.m_Player_CameraRotationWithKeyboard;
+        public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -182,16 +319,46 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @CameraMovement.started += instance.OnCameraMovement;
-            @CameraMovement.performed += instance.OnCameraMovement;
-            @CameraMovement.canceled += instance.OnCameraMovement;
+            @CameraMovementWithKeyboard.started += instance.OnCameraMovementWithKeyboard;
+            @CameraMovementWithKeyboard.performed += instance.OnCameraMovementWithKeyboard;
+            @CameraMovementWithKeyboard.canceled += instance.OnCameraMovementWithKeyboard;
+            @CameraLocomotionWithMouse.started += instance.OnCameraLocomotionWithMouse;
+            @CameraLocomotionWithMouse.performed += instance.OnCameraLocomotionWithMouse;
+            @CameraLocomotionWithMouse.canceled += instance.OnCameraLocomotionWithMouse;
+            @LeftMouse.started += instance.OnLeftMouse;
+            @LeftMouse.performed += instance.OnLeftMouse;
+            @LeftMouse.canceled += instance.OnLeftMouse;
+            @RightMouse.started += instance.OnRightMouse;
+            @RightMouse.performed += instance.OnRightMouse;
+            @RightMouse.canceled += instance.OnRightMouse;
+            @CameraRotationWithKeyboard.started += instance.OnCameraRotationWithKeyboard;
+            @CameraRotationWithKeyboard.performed += instance.OnCameraRotationWithKeyboard;
+            @CameraRotationWithKeyboard.canceled += instance.OnCameraRotationWithKeyboard;
+            @MouseScroll.started += instance.OnMouseScroll;
+            @MouseScroll.performed += instance.OnMouseScroll;
+            @MouseScroll.canceled += instance.OnMouseScroll;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @CameraMovement.started -= instance.OnCameraMovement;
-            @CameraMovement.performed -= instance.OnCameraMovement;
-            @CameraMovement.canceled -= instance.OnCameraMovement;
+            @CameraMovementWithKeyboard.started -= instance.OnCameraMovementWithKeyboard;
+            @CameraMovementWithKeyboard.performed -= instance.OnCameraMovementWithKeyboard;
+            @CameraMovementWithKeyboard.canceled -= instance.OnCameraMovementWithKeyboard;
+            @CameraLocomotionWithMouse.started -= instance.OnCameraLocomotionWithMouse;
+            @CameraLocomotionWithMouse.performed -= instance.OnCameraLocomotionWithMouse;
+            @CameraLocomotionWithMouse.canceled -= instance.OnCameraLocomotionWithMouse;
+            @LeftMouse.started -= instance.OnLeftMouse;
+            @LeftMouse.performed -= instance.OnLeftMouse;
+            @LeftMouse.canceled -= instance.OnLeftMouse;
+            @RightMouse.started -= instance.OnRightMouse;
+            @RightMouse.performed -= instance.OnRightMouse;
+            @RightMouse.canceled -= instance.OnRightMouse;
+            @CameraRotationWithKeyboard.started -= instance.OnCameraRotationWithKeyboard;
+            @CameraRotationWithKeyboard.performed -= instance.OnCameraRotationWithKeyboard;
+            @CameraRotationWithKeyboard.canceled -= instance.OnCameraRotationWithKeyboard;
+            @MouseScroll.started -= instance.OnMouseScroll;
+            @MouseScroll.performed -= instance.OnMouseScroll;
+            @MouseScroll.canceled -= instance.OnMouseScroll;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -211,6 +378,11 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public PlayerActions @Player => new PlayerActions(this);
     public interface IPlayerActions
     {
-        void OnCameraMovement(InputAction.CallbackContext context);
+        void OnCameraMovementWithKeyboard(InputAction.CallbackContext context);
+        void OnCameraLocomotionWithMouse(InputAction.CallbackContext context);
+        void OnLeftMouse(InputAction.CallbackContext context);
+        void OnRightMouse(InputAction.CallbackContext context);
+        void OnCameraRotationWithKeyboard(InputAction.CallbackContext context);
+        void OnMouseScroll(InputAction.CallbackContext context);
     }
 }
