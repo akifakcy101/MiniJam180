@@ -18,7 +18,7 @@ public class PlayerInputManager : MonoBehaviour
 
     [Header("Camera Rotation Input Values")]
     [HideInInspector] public float cameraRotationInputValues;
-    private bool isMouseRotation;
+    private bool isMouseRotation = false;
 
     [Header("Camera Zoom Input Values")]
     [HideInInspector] public float cameraZoomInputValue;
@@ -65,7 +65,7 @@ public class PlayerInputManager : MonoBehaviour
 
             //SET THE isMouseRotation BOOL
             playerInput.Player.RightMouse.performed += i => isMouseRotation = true;
-            playerInput.Player.RightMouse.canceled += i => isMouseRotation = false;
+            playerInput.Player.RightMouse.canceled += i => { cameraRotationInputValues = 0f; isMouseRotation = false; };
             
         }
     }
@@ -94,6 +94,5 @@ public class PlayerInputManager : MonoBehaviour
     private void Update()
     {
         SetAllCameraInputValues();
-        Debug.Log(isMouseRotation);
     }
 }

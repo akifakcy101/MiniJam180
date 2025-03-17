@@ -121,7 +121,6 @@ public class CameraLocomotionManager : MonoBehaviour
     private void LateUpdate()
     {
         HandleAllCameraActions();
-        Debug.Log(PlayerInputManager.instance.cameraRotationInputValues);
         
     }
 }
