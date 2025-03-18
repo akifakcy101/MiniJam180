@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
@@ -39,6 +41,8 @@ public class DragAndDrop : MonoBehaviour
         {
             if (hit.collider != null && (hit.collider.gameObject.CompareTag("Human")))
             {
+                hit.collider.gameObject.GetComponent<NavMesh>().isCatched = true;
+                hit.collider.gameObject.GetComponent<NavMeshAgent>().enabled = false;
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
             }
         }

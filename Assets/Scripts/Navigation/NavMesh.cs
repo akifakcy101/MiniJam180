@@ -8,6 +8,8 @@ public class NavMesh : MonoBehaviour
     public Transform target;
 
     private NavMeshAgent agent;
+    public bool isCatched = false;
+    private bool isCatchedBefore = false;
 
 
     void Start()
@@ -18,10 +20,23 @@ public class NavMesh : MonoBehaviour
 
     void Update()
     {
-        agent.destination = target.position;
-        if (Vector3.Distance(transform.position, target.position) < 1f)
+        if (!isCatched)
         {
-            target = targets[Random.Range(0, targets.Count)];
+            if (isCatchedBefore)
+            {
+                isCatchedBefore = false;
+                GetComponent<Rigidbody>().useGravity = false;
+            }
+            agent.destination = target.position;
+            if (Vector3.Distance(transform.position, target.position) < 1f)
+            {
+                target = targets[Random.Range(0, targets.Count)];
+            }
+        }
+        else
+        {
+            isCatchedBefore = true;
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
